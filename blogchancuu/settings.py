@@ -78,12 +78,28 @@ WSGI_APPLICATION = 'blogchancuu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if DEBUG:
+    DATABASES = {
+        'default': {
+             'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'dev',
+            'USER': 'postgres',
+            'PASSWORD': '9pu056094',
+            'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
+            'PORT': '5432'
+        }
     }
-}
+else :
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'blogchancuu_aws_postgres',
+            'USER': 'postgres',
+            'PASSWORD': '9pu056094',
+            'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
+            'PORT': '5432'
+        }
+    }
 
 
 # Password validation
