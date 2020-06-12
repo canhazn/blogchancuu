@@ -9,19 +9,27 @@ from import_export.admin import ImportExportModelAdmin
 
 
 class TagResource(resources.ModelResource):
-
     class Meta:
         model = Tag
 
-class PostAdmin(SummernoteModelAdmin):
+class PostResource(resources.ModelResource):
+    class Meta:
+        model = Post
+
+class ImageResource(resources.ModelResource):
+    class Meta:
+        model = Image
+
+class PostAdmin(SummernoteModelAdmin, ImportExportModelAdmin):
     summernote_fields = ('content',)
     list_display = ('title', 'slug', 'get_tags', 'status', 'created_on')
     # list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
+    resource_class = PostResource
 
     def get_tags(self, obj):
-        return ",".join([tag.title for tag in obj.tag.all()])
+        return ",".join([tag.title for tag in obj.tags.all()])
     get_tags.short_description = "TAGS"
     
 
