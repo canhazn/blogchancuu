@@ -17,7 +17,7 @@ class Tag(models.Model):
 	created_on = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return self.title
+		return str(self.title)
 
 class Post(models.Model):
 	title = models.CharField(max_length=200, null=True, blank=True)
@@ -34,7 +34,8 @@ class Post(models.Model):
 		ordering = ['-created_on']
 
 	def __str__(self):
-		return self.slug
+		print(self.slug)
+		return str(self.slug)
 
 	def save(self, **kwargs):
 		# check because update post can overwrite slug
@@ -67,4 +68,4 @@ class Image(models.Model):
 	img_file = models.ImageField(upload_to=path_file_name, null=True, blank=True)
 
 	def __str__(self):
-		return self.img_file.url
+		return str(self.img_file.url)
