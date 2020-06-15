@@ -59,7 +59,7 @@ ROOT_URLCONF = 'blogchancuu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,28 +78,17 @@ WSGI_APPLICATION = 'blogchancuu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'dev',
-            'USER': 'postgres',
-            'PASSWORD': '9pu056094',
-            'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
-            'PORT': '5432'
-        }
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dev',
+        'USER': 'postgres',
+        'PASSWORD': '9pu056094',
+        'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
-else :
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'blogchancuu_aws_postgres',
-            'USER': 'postgres',
-            'PASSWORD': '9pu056094',
-            'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
-            'PORT': '5432'
-        }
-    }
+}
+
 
 
 # Password validation
@@ -149,3 +138,25 @@ MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+#S3 BUCKETS CONFIG
+AWS_ACCESS_KEY_ID = 'AKIAYN6DG2LSW4JRYFF2'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'blogchancuu-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+'''

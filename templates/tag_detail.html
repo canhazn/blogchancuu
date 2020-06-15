@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock extrahead %}
+{% block content %}
+<script src="https://unpkg.com/magic-grid@3.1.2/dist/magic-grid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.0.11/dotdotdot.js"></script>
+<div class="container">
+
+    <div class="col text-right mb-4">
+        <span>
+            {{ tag.title }}
+        </span>
+    </div>
+
+    <div class="container-post">
+        {% for post in posts %}
+        <div class="post mb-4" data-post-slug="{{ post.slug }}">
+            {% if post.title %}
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% endif %}
+            <div class="post-content">{{ post.content| safe }}</div>
+            <div class="botton-nav d-flex justify-content-between align-self-baseline">
+                <div class="tags">
+                    {% for tag in post.tag.all %}
+                    <!-- <span class="tag badge badge-pill badge-dark font-weight-normal">{{ tag }}</span> -->
+                    <a href="{% url 'tag_detail' tag.slug %}"
+                        class="tag badge badge-pill badge-dark font-weight-normal">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                <div></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    let magicGrid = new MagicGrid({
+        container: '.container-post',
+        animate: true,
+        gutter: 15,
+        static: true,
+        useMin: true
+    });
+
+    magicGrid.listen();
+
+    $(".post-content").dotdotdot();
+
+    $('.post').click(function (event) {
+        let slug = $(this).data().postSlug;
+
+        if (!event.target.className.includes('tag')) {
+            window.location.href = '../../' + slug
+        }
+    });
+
+</script>
+{%endblock%}
