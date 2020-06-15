@@ -1,0 +1,15 @@
+:root {
+    --main-bg-color: #202124;
+    --main-text-color: #e8eaed;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    background-color: #202124;
+    color: var(--main-text-color);
+}
+
+.top-nav {
+    background-color: #1a1a1a;
+}

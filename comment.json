@@ -1,0 +1,1 @@
+[{"model": "post.comment", "pk": 1, "fields": {"post": 1, "name": "Anh", "email": "canhazn@gmail.com", "body": "test b\u00ecnh lu\u1eadn", "created_on": "2020-05-14T09:40:30.737Z", "active": true}}]
