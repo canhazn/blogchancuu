@@ -1,11 +1,16 @@
 var store = new Vuex.Store({
     state: {
-        posts: []
+        posts: [],
+        loading: true
     },
     mutations: {
+        loadPost(state) {
+            state.loading = true;
+        },
         appendPost(state, posts) {
             state.posts = state.posts.concat(posts);
-            console.log("get muta: ", state.posts)
+            state.loading = false;
+            console.log("get muta: ", state.posts);
         }
     }
 });
@@ -51,6 +56,9 @@ var app = new Vue({
     computed: {
         posts() {
             return store.state.posts
+        },
+        loading() {
+            return store.state.loading
         }
     }
 });
@@ -77,12 +85,15 @@ $(window).on("scroll", function () {
     var scrollPosition = $(window).height() + $(window).scrollTop();
     if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
         console.log('post list update');
+        if (!nextUrl) return;
+        store.commit('loadPost');
         $.ajax({
             url: nextUrl,
             success: function (res) {
                 if (!res.results) return;
                 store.commit('appendPost', res.results);
                 nextUrl = res.next;
+                console.log(nextUrl);
             }
         })
     }
