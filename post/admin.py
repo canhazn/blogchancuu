@@ -22,7 +22,7 @@ class ImageResource(resources.ModelResource):
 
 class PostAdmin(SummernoteModelAdmin, ImportExportModelAdmin):
     summernote_fields = ('content',)
-    list_display = ('title', 'slug', 'get_tags', 'status', 'created_on')
+    list_display = ('slug', 'title', 'get_tags', 'get_content')
     # list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
@@ -31,6 +31,10 @@ class PostAdmin(SummernoteModelAdmin, ImportExportModelAdmin):
     def get_tags(self, obj):
         return ",".join([tag.title for tag in obj.tags.all()])
     get_tags.short_description = "TAGS"
+
+    def get_content(self, obj):
+        return format_html("<div style='overflow: hidden; text-overflow: ellipsis;'>{}</div>".format(obj.content))
+    get_content.short_description = "CONTENTS"
     
 
 admin.site.register(Post, PostAdmin)
