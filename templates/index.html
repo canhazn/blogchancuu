@@ -10,44 +10,99 @@
 <script src="https://unpkg.com/vue-router"></script>
 <script src="https://unpkg.com/vuex"></script>
 <div class="container">
-    <div id="app" v-cloak>        
+    <div id="app" v-cloak>
         <post-list v-bind:posts="posts"></post-list>
         <div class="text-center" v-if="loading">
             <div class="spinner-border spinner-border-sm" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
-        </div>       
+        </div>
+
+        <div id="myModel" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog m-auto" role="document">
+                <div class="modal-content">
+                    <div class="modal-header rounded-0 sticky-top w-100">
+                        <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
+                            <span class="material-icons">
+                                keyboard_arrow_left
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <template id="post-detail-template">
+                            <div class="post-detail">
+                                <div class="w-100 d-flex flex-row" v-if="selectedPost.images.length">
+                                    <div class="flex-grow-1">
+                                        <img class="w-100 post-images" v-for="image in selectedPost.images"
+                                            :key="image.url" v-bind:src="image.url" />
+                                    </div>
+                                </div>
+
+
+                                <h2 class="post-title" v-if="selectedPost.title" v-html="selectedPost.title"></h2>
+                                <div class="post-content" v-html="selectedPost.content"></div>
+
+                                <div class="tags p-3 nav">
+                                    <span v-if="selectedPost.tags.length > 0">
+                                        <a class="tag badge badge-pill badge-dark font-weight-normal mr-3"
+                                            v-for="tag in selectedPost.tags" :key="tag.slug"
+                                            v-bind:href="'tag/' + tag.slug" v-html="tag.title"></a>
+                                    </span>
+                                    <span class="created-on text-muted text-right ml-auto"
+                                        v-html="selectedPost.created_on"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <!-- <div class="modal-header modal-footer border-bottom-0 border-top rounded-0">
+                        <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
+                            <span class="material-icons">
+                                expand_more
+                            </span>
+                        </button>
+                        <button type="button" class="close mr-0" data-dismiss="modal" aria-label="Close">
+                            <span class="material-icons">
+                                share
+                            </span>
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <template id="post-list-template">
-        <div  class="container-post">
-            <post 
-                v-for="post in posts"
-                v-bind:post="post"
-                :key="post.slug"
-            ></post>
-         
+        <div class="container-post">
+            <post v-for="post in posts" v-bind:post="post" :key="post.slug"></post>
+
         </div>
     </template>
 
     <template id="post-template">
-        <div class="post mb-4 overflow-hidden">
+        <div class="post mb-4 overflow-hidden" @click="handleClick($event)">
 
-            <div class="w-100 d-flex flex-row" v-if="post.images.length">                
+            <div class="w-100 d-flex flex-row" v-if="post.images.length">
                 <div class="flex-grow-1">
-                    <img class="w-100 post-images" v-for="image in post.images" :key="image.url" v-bind:src="image.url" />
-                </div>                
+                    <img class="w-100 post-images" v-for="image in post.images" :key="image.url"
+                        v-bind:src="image.url" />
+                </div>
             </div>
 
 
-            <h2 class="post-title" v-html="post.title"></h2>
+            <h2 class="post-title" v-if="post.title" v-html="post.title"></h2>
             <div class="post-content" v-html="post.content"></div>
 
-            <div class="tags p-3" v-if="post.tags.length > 0">            
-                <a class="tag badge badge-pill badge-dark font-weight-normal mr-3" v-for="tag in post.tags" :key="tag.slug" v-bind:href="'tag/' + tag.slug" v-html="tag.title"></a>
+            <div class="tags p-3" v-if="post.tags.length > 0">
+                <a class="tag badge badge-pill badge-dark font-weight-normal mr-3" v-for="tag in post.tags"
+                    :key="tag.slug" v-bind:href="'tag/' + tag.slug" v-html="tag.title"></a>
             </div>
         </div>
     </template>
+
+
+
 </div>
 <script src="{% static 'js/index.js' %}"></script>
 {%endblock%}
