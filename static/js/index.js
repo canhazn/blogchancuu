@@ -1,16 +1,11 @@
 var store = new Vuex.Store({
     state: {
         posts: [],
-        selectedPost: {
-            "images": [],
-            "tags": [],
-            "title": null,
-            "slug": "2020-05-31-0338170009330000",
-            "content": "<p>Đời chỉ có một lần. Vậy nó sẽ phải làm gì?</p>",
-            "created_on": "2020-05-31T10:38:17.037000+07:00"
-        },
+        selectedPost: {},
+        initing: true,
         loading: true,
         nextUrl: "/api/post-list/",
+        searchKey: ""
     },
     getters: {
         selectedPost(state) {
@@ -18,11 +13,25 @@ var store = new Vuex.Store({
         }
     },
     mutations: {
-        loading(state) {
+        initing(state) {            
+            state.initing = true;
+        },
+        loading(state) {            
             state.loading = true;
         },
-        selecPost(state, { post }) {
-            state.selectedPost = post
+        selectedPost(state, post) {
+            state.selectedPost = post;
+        },
+        searchPost(state, key) {   
+            state.initing = true;         
+            state.posts = [];
+            state.searchKey = key;
+        },
+        initPosts(state, { posts, nextUrl }) {
+            state.posts = posts;
+            state.nextUrl = nextUrl;
+            state.loading = false;
+            state.initing = false;
         },
         appendPost(state, { posts, nextUrl }) {
             state.posts = state.posts.concat(posts);
@@ -32,9 +41,24 @@ var store = new Vuex.Store({
         }
     },
     actions: {
+        initPosts(context) {
+            let url = "/api/post-list/";
+            url += context.state.searchKey ? "?search=" + context.state.searchKey : "";
+            context.commit('loading');
+            $.ajax({
+                url: url,
+                success: function (res) {
+                    console.log("Inited, next url:", res.next);
+                    store.commit('initPosts', {
+                        posts: res.results,
+                        nextUrl: res.next
+                    });
+                }
+            })
+        },
         loadPost(context) {
             if (!context.state.nextUrl) {
-                console.log(" STOP next is null")
+                console.log("STOP next is null");
                 return;
             }
             if (context.state.loading && context.state.posts.length) {
@@ -45,7 +69,7 @@ var store = new Vuex.Store({
             $.ajax({
                 url: context.state.nextUrl,
                 success: function (res) {
-                    console.log("next loaded:", res.next)
+                    console.log("LoadPost nexturl: ", res.next)
                     store.commit('appendPost', {
                         posts: res.results,
                         nextUrl: res.next
@@ -53,9 +77,12 @@ var store = new Vuex.Store({
                 }
             })
         },
+        searchPost(context, key) {
+            context.commit("searchPost", key);
+            context.dispatch("initPosts");
+        },
         selectPost(context, post) {
-            console.log("selected: ", post.title);
-            context.commit("selecPost", { post: post });
+            context.commit("selectedPost", post);
         }
     }
 });
@@ -64,15 +91,17 @@ PostList = Vue.component('post-list', {
     props: ['posts'],
     template: "#post-list-template",
     updated: function () {
-        let magicGrid = new MagicGrid({
-            container: '.container-post',
-            animate: true,
-            gutter: 15,
-            static: true,
-            useMin: true
-        });
-
-        magicGrid.listen();
+        if ($(".container-post")) {
+            let magicGrid = new MagicGrid({
+                container: '.container-post',
+                animate: true,
+                gutter: 15,
+                static: true,
+                useMin: true
+            });
+    
+            magicGrid.listen();
+        }
     }
 });
 
@@ -85,8 +114,9 @@ Post = Vue.component('post', {
     methods: {
         handleClick(event) {
 
-            // if click tag -> don't open dialog            
-            if (event.target.tagName == "SPAN" && event.target.className.includes('tag')) {
+            // if click tag -> don't open dialog       
+            console.log("clicked tagName: ", event.target.tagName);
+            if (event.target.tagName == "A" && event.target.className.includes('tag')) {
                 return;
             }
 
@@ -116,11 +146,14 @@ var app = new Vue({
     el: '#app',
     store,
     mounted: function () {
-
+        store.dispatch('initPosts');
     },
     computed: {
         posts() {
             return store.state.posts
+        },
+        initing() {
+            return store.state.initing
         },
         loading() {
             return store.state.loading
@@ -131,11 +164,6 @@ var app = new Vue({
     }
 });
 
-$('.post').click(function (event) {
-
-});
-
-store.dispatch('loadPost');
 
 
 $(window).on("scroll", function () {
@@ -145,3 +173,18 @@ $(window).on("scroll", function () {
         store.dispatch('loadPost');
     }
 });
+
+
+(function () {
+    var timeout = {};
+    var update = function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            var key = $('#search').val();            
+            store.dispatch('searchPost', key);
+        }, 1000);
+    };
+
+    $('input#search').keyup(update);
+    $('input#search').change(update);
+}());

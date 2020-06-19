@@ -4,14 +4,14 @@
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock extrahead %}
 {% block content %}
-<script src="https://unpkg.com/magic-grid@3.1.2/dist/magic-grid.min.js"></script>
+<script src="{% static 'js/MagicGrid/index.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.0.11/dotdotdot.js"></script>
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/vue-router"></script>
 <script src="https://unpkg.com/vuex"></script>
 <div class="container">
     <div id="app" v-cloak>
-        <post-list v-bind:posts="posts"></post-list>
+        <post-list v-bind:posts="posts" v-show="!initing"></post-list>
         <div class="text-center" v-if="loading">
             <div class="spinner-border spinner-border-sm" role="status">
                 <span class="sr-only">Loading...</span>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="modal-body p-0">
                         <template id="post-detail-template">
-                            <div class="post-detail">
+                            <div class="post-detail" v-if="selectedPost.slug">
                                 <div class="w-100 d-flex flex-row" v-if="selectedPost.images.length">
                                     <div class="flex-grow-1">
                                         <img class="w-100 post-images" v-for="image in selectedPost.images"
@@ -54,19 +54,7 @@
                                 </div>
                             </div>
                         </template>
-                    </div>
-                    <!-- <div class="modal-header modal-footer border-bottom-0 border-top rounded-0">
-                        <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
-                            <span class="material-icons">
-                                expand_more
-                            </span>
-                        </button>
-                        <button type="button" class="close mr-0" data-dismiss="modal" aria-label="Close">
-                            <span class="material-icons">
-                                share
-                            </span>
-                        </button>
-                    </div> -->
+                    </div>                
                 </div>
             </div>
         </div>
@@ -76,12 +64,11 @@
     <template id="post-list-template">
         <div class="container-post">
             <post v-for="post in posts" v-bind:post="post" :key="post.slug"></post>
-
         </div>
     </template>
 
     <template id="post-template">
-        <div class="post mb-4 overflow-hidden" @click="handleClick($event)">
+        <div class="post mb-4 overflow-hidden" @click="handleClick($event)" v-if="post.slug">
 
             <div class="w-100 d-flex flex-row" v-if="post.images.length">
                 <div class="flex-grow-1">
