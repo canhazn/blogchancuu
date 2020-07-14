@@ -29,7 +29,35 @@ class TestPostApi(TestCase):
         """
         post = {}
         res = self.client.post(POST_URL, post)
-    
+
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(res.data['slug'], slugify(timezone.now()))
-        
+        self.assertIsNotNone(res.data['slug'])
+        self.assertIsNotNone(res.data['created_on'])
+
+    def test_create_post_with_tag(self):
+        """
+        Test creating post with assosiated tag
+        """
+
+        tag1 = Tag.objects.create(
+            title="Test tag",
+            slug="test-tag"
+        )
+
+        tag2 = Tag.objects.create(
+            title="Test tag 2",
+            slug="test-tag-2"
+        )
+
+        payload = {
+            'title': "Test post",
+            "slug": "test-post",
+            "content": "empyt contemt",
+            "tags": [tag1.id, tag2.id]
+        }
+
+        res = self.client.post(POST_URL, payload)
+        print(res.data)
+        post = Post.objects.get(id=res.data['id'])
+        tags = post.tags.all()
+        print(tags)

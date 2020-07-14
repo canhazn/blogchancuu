@@ -31,4 +31,4 @@ class Post(models.Model):
             slug_str = slugify(timezone.now())
             self.slug = slug_str
 
-        # super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
