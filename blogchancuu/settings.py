@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
-    'post',
     'django_summernote',
-    'rest_framework',    
+    'rest_framework',
     'import_export',
+    'core',
+    'post',
 ]
 
 MIDDLEWARE = [
@@ -81,12 +82,14 @@ WSGI_APPLICATION = 'blogchancuu.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'dev',
-            'USER': 'postgres',
-            'PASSWORD': '9pu056094',
-            'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
-            'PORT': '5432'
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            # 'ENGINE': 'django.db.backends.postgresql',
+            # 'NAME': 'dev',
+            # 'USER': 'postgres',
+            # 'PASSWORD': '9pu056094',
+            # 'HOST': 'blogchancuu-postgres.cefhp2gbw8ow.ap-northeast-1.rds.amazonaws.com',
+            # 'PORT': '5432'
         }
     }
 else:
@@ -100,7 +103,6 @@ else:
             'PORT': '5432'
         }
     }
-
 
 
 # Password validation
@@ -152,7 +154,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-#S3 BUCKETS CONFIG
+# S3 BUCKETS CONFIG
 AWS_ACCESS_KEY_ID = 'AKIAYN6DG2LSW4JRYFF2'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'blogchancuu-bucket'
