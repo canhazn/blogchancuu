@@ -19,13 +19,11 @@ class ImageSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    images = serializers.PrimaryKeyRelatedField(
-        many=True, 
-        queryset=Image.objects.all()
-    )
+    images = ImageSerializer(many=True)
 
     class Meta:
         model = Post
         fields = ['images', 'id', 'tags', 'title',
                   'slug', 'content', 'created_on']
         read_only_fields = ["id"]
+        depth = 1
