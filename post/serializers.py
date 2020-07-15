@@ -1,19 +1,31 @@
 from rest_framework import serializers
-from core.models import Post, Tag
+from core.models import Post, Tag, Image
 
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = "__all__"
+        read_only_fields = ["id"]
+
+
+class ImageSerializer(serializers.ModelSerializer):
+    # post = serializers.
+
+    # url = serializers.SerializerMethodField
+    class Meta:
+        model = Image
+        fields = "__all__"
 
 
 class PostSerializer(serializers.ModelSerializer):
-    tags = serializers.PrimaryKeyRelatedField(
-        many=True,
-        queryset=Tag.objects.all()
+    images = serializers.PrimaryKeyRelatedField(
+        many=True, 
+        queryset=Image.objects.all()
     )
 
     class Meta:
         model = Post
-        fields = ['id', 'tags', 'title', 'slug', 'content', 'created_on']
+        fields = ['images', 'id', 'tags', 'title',
+                  'slug', 'content', 'created_on']
+        read_only_fields = ["id"]

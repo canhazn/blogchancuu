@@ -32,3 +32,15 @@ class Post(models.Model):
             self.slug = slug_str
 
         super().save(*args, **kwargs)
+
+def path_file_name(instance, filename):
+	return "/".join(filter(None, (instance.post.slug, filename)))
+
+class Image(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="images")
+    created_on = models.DateTimeField(auto_now_add=True)
+    img_file = models.ImageField(upload_to=path_file_name)
+
+    def __str__(self):
+        return str(self.img_file.url)
