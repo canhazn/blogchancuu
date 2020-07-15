@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'rest_framework',
     'import_export',
+    'django_filters',
     'core',
     'post',
 ]
@@ -174,3 +175,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # </CORSRule>
 # </CORSConfiguration>
 # '''
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
