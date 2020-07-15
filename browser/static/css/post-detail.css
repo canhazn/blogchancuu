@@ -1,0 +1,42 @@
+@import "base.css";
+
+.post-detail {    
+    /* background-color: var(--main-bg-color); */
+    color: var(--main-bg-color);
+    border: 1px solid #5f6368;
+    border-radius: 8px;
+}
+
+.post-title {
+    padding: 12px 16px 0 16px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #e8eaed;
+}
+
+.post-content {
+    padding: 16px;
+    font-size: 16px;
+    color: #e8eaed;
+}
+
+.botton-nav {
+    padding: 16px;
+}
+
+.created-on {
+    font-size: 16px;
+}
+
+.card {
+    background-color: var(--main-bg-color);
+    color: #fff;
+    border: 1px solid #5f6368;
+}
+
+.form-control-comment {
+    background-color: #2b2b2b !important; 
+    color: var(--main-text-color) !important;
+    border: none !important;
+}
