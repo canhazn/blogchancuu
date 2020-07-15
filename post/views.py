@@ -3,10 +3,6 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from core.models import Post, Tag, Image
 from post.serializers import PostSerializer, TagSerializer, ImageSerializer
-from rest_framework.filters import SearchFilter
-from django_filters.rest_framework import DjangoFilterBackend
-from django_filters import FilterSet, CharFilter
-from django_filters import rest_framework as filters
 
 
 class PostViewSet(viewsets.ModelViewSet, generics.GenericAPIView):
