@@ -5,7 +5,11 @@ var store = new Vuex.Store({
         initing: true,
         loading: true,
         nextUrl: "/api/posts/",
-        searchKey: ""
+        searchKey: "",
+        querys: {
+            search: "",
+            tags: "",
+        }
     },
     getters: {
         selectedPost(state) {
@@ -13,18 +17,20 @@ var store = new Vuex.Store({
         }
     },
     mutations: {
-        initing(state) {            
+        initing(state) {
             state.initing = true;
         },
-        loading(state) {            
+        loading(state) {
             state.loading = true;
         },
         selectedPost(state, post) {
             state.selectedPost = post;
         },
-        searchPost(state, key) {   
-            state.initing = true;         
+        filterPost(state, querys) {
+            state.initing = true;
             state.posts = [];
+            let key = querys.search ? querys.search : "";
+            state.querys = querys;
             state.searchKey = key;
         },
         initPosts(state, { posts, nextUrl }) {
@@ -43,7 +49,8 @@ var store = new Vuex.Store({
     actions: {
         initPosts(context) {
             let url = "/api/posts/";
-            url += context.state.searchKey ? "?search=" + context.state.searchKey : "";
+            url += context.state.querys.search ? "?search=" + context.state.querys.search : "";
+            url += context.state.querys.tags ? "?tags=" + context.state.querys.tags : "";
             context.commit('loading');
             $.ajax({
                 url: url,
@@ -77,8 +84,8 @@ var store = new Vuex.Store({
                 }
             })
         },
-        searchPost(context, key) {
-            context.commit("searchPost", key);
+        filterPost(context, querys) {
+            context.commit("filterPost", querys);
             context.dispatch("initPosts");
         },
         selectPost(context, post) {
@@ -87,19 +94,21 @@ var store = new Vuex.Store({
     }
 });
 
+let magicGrid;
+
 PostList = Vue.component('post-list', {
     props: ['posts'],
     template: "#post-list-template",
     updated: function () {
         if ($(".container-post")) {
-            let magicGrid = new MagicGrid({
+            magicGrid = new MagicGrid({
                 container: '.container-post',
                 animate: true,
                 gutter: 15,
                 static: true,
                 useMin: true
             });
-    
+
             magicGrid.listen();
         }
     }
@@ -115,10 +124,8 @@ Post = Vue.component('post', {
         handleClick(event) {
 
             // if click tag -> don't open dialog       
-            console.log("clicked tagName: ", event.target.tagName);
-            if (event.target.tagName == "A" && event.target.className.includes('tag')) {
-                return;
-            }
+            console.log("clicked tagName: ", this.post);
+            if (event.target.tagName == "SPAN" && event.target.className.includes('tag')) return;
 
             var my_date_format = function (input) {
                 var d = new Date(input);
@@ -139,7 +146,57 @@ Post = Vue.component('post', {
 PostDetail = Vue.component('post-detail', {
     props: ["selectedPost"],
     template: "#post-detail-template",
+    updated: function () {
+        console.log("post detail")
+    }
 });
+
+PostImages = Vue.component('post-images', {
+    props: ["images"],
+    template: "#post-images-template",
+    mounted: function () {
+        if (!$(this.$el).find("img")) return;
+        $(this.$el).find("img").each(function (index, element) {
+
+            $(element).on('load', function () {
+                console.log('new image loaded: ' + this.src);
+                magicGrid.positionItems()
+            });
+        });
+    }
+});
+
+
+PostTitle = Vue.component('post-title', {
+    props: ["title"],
+    template: "#post-title-template"
+});
+
+
+PostContent = Vue.component('post-content', {
+    props: ["content"],
+    template: "#post-content-template"
+});
+
+
+PostTag = Vue.component('post-tag', {
+    props: ["tag"],
+    template: "#post-tag-template",
+    methods: {
+        handleClick(event) {
+            if (event.target.innerText !== this.tag.title) return;
+            store.dispatch('filterPost', { "tags": this.tag.id });
+
+            $('#myModel').modal('hide');
+        }
+    }
+});
+
+LoadingIcon = Vue.component('loading-icon', {
+    props: ["loading"],
+    template: "#loading-icon-template"
+});
+
 
 var app = new Vue({
     delimiters: ['[[', ']]'],
@@ -180,8 +237,8 @@ $(window).on("scroll", function () {
     var update = function () {
         clearTimeout(timeout);
         timeout = setTimeout(function () {
-            var key = $('#search').val();            
-            store.dispatch('searchPost', key);
+            var key = $('#search').val();
+            store.dispatch('filterPost', { "search": key });
         }, 1000);
     };
 
