@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock extrahead %}
+{% block content %}
+<script src="{% static 'js/MagicGrid/index.js' %}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.0.11/dotdotdot.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router"></script>
+<script src="https://unpkg.com/vuex"></script>
+<div class="container">
+    <div id="app" v-cloak>
+        <post-list v-bind:posts="posts" v-show="!initing"></post-list>
+        <loading-icon v-bind:loading="loading"></loading-icon>
+
+        <div id="myModel" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog m-auto" role="document">
+                <div class="modal-content">
+                    <div class="modal-header rounded-0 sticky-top w-100">
+                        <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
+                            <span class="material-icons">
+                                keyboard_arrow_left
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <template id="post-detail-template">
+                            <div class="post-detail" v-if="selectedPost.slug">
+                                <post-images v-bind:images="selectedPost.images"></post-images>
+                                <post-title v-bind:title="selectedPost.title"></post-title>
+                                <post-content v-bind:content="selectedPost.content"></post-content>
+
+                                <div class="tags p-3 nav">
+                                    <span v-if="selectedPost.tags.length > 0">
+                                        <post-tag v-for="tag in selectedPost.tags" v-bind:tag="tag" :key="tag.slug">
+                                        </post-tag>
+                                    </span>
+                                    <span class="created-on text-muted text-right ml-auto"
+                                        v-html="selectedPost.created_on"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <template id="post-list-template">
+        <div class="container-post">
+            <post v-for="post in posts" v-bind:post="post" :key="post.slug"></post>
+        </div>
+    </template>
+
+    <template id="post-template">
+        <div class="post mb-4 overflow-hidden" @click="handleClick($event)" v-if="post.slug">
+            <post-images v-bind:images="post.images"></post-images>
+            <post-title v-bind:title="post.title"></post-title>
+            <post-content v-bind:content="post.content"></post-content>
+
+
+            <div class="tags p-3" v-if="post.tags.length > 0">
+                <post-tag v-for="tag in post.tags" v-bind:tag="tag" :key="tag.slug"></post-tag>
+            </div>
+        </div>
+    </template>
+
+    <template id="post-images-template">
+        <div class="w-100 d-flex flex-row" v-if="images">
+            <div class="flex-grow-1">
+                <img class="w-100 post-images" v-for="image in images" :key="image.img_file" v-bind:src="image.img_file" />
+            </div>
+        </div>
+    </template>
+
+    <template id="post-title-template">
+        <div class="post-title" v-html="title"></div>
+    </template>
+
+    <template id="post-content-template">
+        <div class="post-content" v-html="content"></div>
+    </template>
+
+    <template id="post-tag-template">
+        <span class="tag badge badge-pill badge-dark font-weight-normal mr-3" v-html="tag.title"
+            @click="handleClick($event)"></span>
+    </template>
+
+    <template id="loading-icon-template">
+        <div class="text-center" v-if="loading">
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </template>
+
+</div>
+<script src="{% static 'js/index.js' %}"></script>
+{%endblock%}

@@ -1,1 +1,833 @@
-[{"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "post", "model": "tag"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "post", "model": "post"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "post", "model": "image"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "post", "model": "comment"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "django_summernote", "model": "attachment"}}, {"model": "sessions.session", "pk": "6v7wql5hf3lp0enwl5qbqjy5zks6wd7t", "fields": {"session_data": "OTc1OGJhYjlkZjE4OTk0MDVlYzBhYTg3YTY2YmMzYWQxNmI3YzYzODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMTE4MGM2YTc3NmMxZjI4MTA0ZjE0ZWI2NmY2YWJjYTk3MjUwNzMxIn0=", "expire_date": "2020-06-29T02:53:40.441Z"}}, {"model": "sessions.session", "pk": "f2997azx0fr1aenibmeciuic0nxdmxvr", "fields": {"session_data": "OTc1OGJhYjlkZjE4OTk0MDVlYzBhYTg3YTY2YmMzYWQxNmI3YzYzODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMTE4MGM2YTc3NmMxZjI4MTA0ZjE0ZWI2NmY2YWJjYTk3MjUwNzMxIn0=", "expire_date": "2020-06-26T08:09:45.167Z"}}, {"model": "sessions.session", "pk": "vfpar4i6lesjytx5ees0fw6g0ym99tsu", "fields": {"session_data": "OTc1OGJhYjlkZjE4OTk0MDVlYzBhYTg3YTY2YmMzYWQxNmI3YzYzODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMTE4MGM2YTc3NmMxZjI4MTA0ZjE0ZWI2NmY2YWJjYTk3MjUwNzMxIn0=", "expire_date": "2020-06-29T03:23:51.034Z"}}, {"model": "post.tag", "pk": 1, "fields": {"title": "Ch\u00e2m ng\u00f4n", "slug": "cham-ngon", "created_on": "2020-05-19T08:55:30.815Z"}}, {"model": "post.tag", "pk": 2, "fields": {"title": "Thi vi\u1ec7n", "slug": "thi-vien", "created_on": "2020-05-26T06:48:29.972Z"}}, {"model": "post.post", "pk": 1, "fields": {"title": "s\u1eb5n s\u00e0ng online", "slug": "san-sang-online", "update_on": "2020-05-13T11:09:05.893Z", "content": "<p>Sau c\u1ea3 th\u00e1ng tr\u1eddi th\u00ec c\u0169ng \u0111\u00e3 s\u1eb5n s\u00e0ng cho blog l\u00ean s\u00f3ng.&nbsp;</p><p>Database PostgreSql: AWS&nbsp;</p><p>Static Files: W3 service</p><p>Host: Heroku</p>", "created_on": "2020-05-13T00:00:00Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 2, "fields": {"title": "N\u1eefa n\u00e0o", "slug": "nua-nao", "update_on": "2020-05-14T14:59:02.466Z", "content": "<p>M\u1ed7i ng\u00e0y m\u1ed9t t\u1ed1t h\u01a1n nh\u00e9. Th\u1ebf l\u00e0 c\u0169ng xong c\u00e1i blog n\u00e0y r\u1ed3i, gi\u1edd th\u1ec9nh tho\u1ea3ng v\u00f4 update l\u00e0m cho n\u00f3 t\u1ed1t h\u01a1n th\u00f4i. V\u1eabn c\u1ea7n th\u00eam t\u00ednh n\u0103ng slug by&nbsp;unique id, tags n\u1eefa. C\u1ed1 l\u00ean n\u00e0o.</p>\r\n\r\n<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/653777399&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true\"></iframe>", "created_on": "2020-05-14T00:00:00Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 16, "fields": {"title": "done slug", "slug": "done-slug", "update_on": "2020-05-15T03:25:18.630Z", "content": "<p>Slug done sau c\u1ea3 bu\u1ed5i s\u00e1ng nghi\u00ean c\u1ee9u:&nbsp;</p><p>Ban \u0111\u1ea7u d\u00f9ng AutoSlug th\u00ec kh\u00f4ng \u0111\u01b0\u1ee3c? Sau \u0111\u00f3 th\u1eed unique_slugify v\u00e0 c\u0169ng kh\u00f4ng \u0111\u01b0\u1ee3c. \u0110au, gi\u1edd l\u1eadt l\u1ea1i t\u00ecm l\u00ed do, th\u00ec ra l\u00e0 created_on v\u1eabn l\u00e0 null cho \u0111\u1ebfn khi \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o database. C\u00e1ch gi\u1ea3i quy\u1ebft b\u00e2y gi\u1edd l\u00e0 g\u00e1n gi\u00e1 tr\u1ecb cho n\u00f3 tr\u01b0\u1edbc khi \u0111\u01b0\u1ee3c \u0111\u01b0a xu\u1ed1ng database. V\u1eady th\u00ec d\u00f9ng timestamp.now() - m\u1ed9t util c\u1ee7a django l\u00e0 ok.</p>", "created_on": "2020-05-15T03:25:18.630Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 18, "fields": {"title": null, "slug": "2020-05-15-0916176533780000", "update_on": "2020-05-16T02:26:40.992Z", "content": "C\u1ed1 l\u00ean b\u1ea1n \u01a1i!&nbsp;\u2764\ufe0f", "created_on": "2020-05-15T09:16:17.870Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 19, "fields": {"title": null, "slug": "2020-05-15-1516080875850000", "update_on": "2020-05-15T15:16:08.397Z", "content": "<p>Y\u00eau b\u1ea3n th\u00e2n m\u00ecnh tr\u01b0\u1edbc \u0111i nh\u00e9! Ph\u1ea3i ch\u0103m s\u00f3c t\u1ed1t cho n\u00f3\ud83e\udd70, gi\u1edd th\u00ec \u0111i ng\u1ee7 s\u1edbm \u0111i.</p>", "created_on": "2020-05-15T15:16:08.397Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 20, "fields": {"title": "H\u1ecdc ng\u1ee7", "slug": "hoc-ngu", "update_on": "2020-05-15T23:45:23.006Z", "content": "<p>Ha ha ha, c\u01b0\u1eddi l\u1edbn. T\u1eebng n\u00e0y tu\u1ed5i r\u1ed3i m\u00e0 gi\u1edd n\u00e0y c\u00f2n ph\u1ea3i h\u1ecdc c\u00e1ch ng\u1ee7.&nbsp;</p><p>B\u1eaft \u0111\u1ea7u l\u00ean gi\u01b0\u1eddng t\u1eeb 10h, n\u1eb1m tr\u1eb1n tr\u1ecdc l\u0103n b\u00ean n\u00e0y, l\u1eadt b\u00ean kia. L\u1eadt ch\u0103n ra th\u00ec l\u1ea1nh, \u0111\u1eafp ch\u0103n v\u00e0o th\u00ec n\u00f3ng. Quay qu\u1ea1t l\u00ean \u0111\u1ea7u th\u00ec s\u1ee3 ho, quay qu\u1ea1t xu\u1ed1ng ch\u00e2n th\u00ec th\u1ea5y m\u1ec7t m\u1ec7t. M\u1edf c\u1ee7a s\u1ed5 th\u00ec mu\u1ed7n, \u0111\u00f3ng c\u1eeda s\u1ed5 th\u00ec b\u00ed. \u00d4i tr\u1eddi t\u00f4i ch\u1ebft m\u1ea5t, \u0111\u1ee7 th\u1ee9 chuy\u1ec7n kh\u00f3 ch\u1ecbu.</p><p>R\u1ed3i b\u1ed7ng ngh\u0129 l\u1ea1i. \u00c0, th\u00ec ra l\u00e0 do t\u00e2m b\u1ea5t \u0111\u1ecbnh. L\u00f2ng kh\u00f4ng y\u00ean n\u00ean sinh kh\u00f3 \u1edf, ch\u1ee9 c\u00f3 g\u00ec to t\u00e1t \u0111\u00e2u. Kh\u00f4ng ph\u1ea3i n\u00f3 kh\u00f3 ng\u1ee7 m\u00e0 l\u00e0 l\u00f2ng kh\u00f4ng y\u00ean th\u00f4i. T\u00e2m tr\u1ea1ng b\u00ecnh \u1ed5n l\u1ea1i, kh\u00f4ng s\u00e2n si, kh\u00f4ng \u0111\u1ed1 k\u1ecb, kh\u00f4ng ph\u00e0n n\u00e0n, t\u1ecf l\u00f2ng bi\u1ebft \u01a1n m\u1ed9t ch\u00fat. \u0110\u1ec3 t\u00e2m tr\u1ea1ng ng\u1ee7 tr\u01b0\u1edbc r\u1ed3i t\u1edbi c\u00e1i th\u00e2n x\u00e1c n\u00e0y ng\u1ee7 sau.</p>", "created_on": "2020-05-15T23:45:23.006Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 21, "fields": {"title": null, "slug": "2020-05-19-0215521973520000", "update_on": "2020-05-19T08:55:40.785Z", "content": "<p>Ng\u01b0\u1eddi c\u00f4ng th\u00e0nh th\u1eafng \u0111\u1ecbch ch\u1eafc ch\u1eafn l\u00e0 ng\u01b0\u1eddi t\u00e0i gi\u1ecfi, nh\u01b0ng ng\u01b0\u1eddi chi\u1ebfn th\u1eafng b\u1ea3n th\u00e2n m\u00ecnh c\u00f2n gi\u1ecfi h\u01a1n!</p>", "created_on": "2020-05-19T02:15:52.445Z", "status": 1, "tags": [1]}}, {"model": "post.post", "pk": 22, "fields": {"title": null, "slug": "2020-05-19-1121514541850000", "update_on": "2020-05-19T11:22:19.951Z", "content": "<p>T\u1ea1m g\u1ecdi l\u00e0 th\u00e0nh c\u00f4ng cho m\u1ed9t ng\u00e0y l\u00e0m vi\u1ec7c.</p><p>B\u1eaft \u0111\u1ea7u l\u00fac 9h s\u00e1ng, k\u1ebft th\u00fac l\u00fac 5h40: tags models, many-to-many relationshiops, query parents models, appy css for tag list, tag_detail.html, resolve nested a html tag by jquery</p><p>6h - 6h20: fix bug. Many to many required blank=true</p>", "created_on": "2020-05-19T11:21:51.700Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 23, "fields": {"title": null, "slug": "2020-05-25-0311387471310000", "update_on": "2020-05-25T03:11:38.915Z", "content": "<p>B\u00ed quy\u1ebft c\u1ee7a h\u1ea1nh ph\u00fac l\u00e0 b\u00e2n r\u1ed9n&nbsp;<span style=\"color: rgb(51, 51, 51); font-family: &quot;Segoe UI Emoji&quot;\">\ud83e\udd70</span></p>", "created_on": "2020-05-25T03:11:38.915Z", "status": 1, "tags": [1]}}, {"model": "post.post", "pk": 24, "fields": {"title": null, "slug": "2020-05-26-0151057250160000", "update_on": "2020-05-26T01:51:05.887Z", "content": "<p class=\"MsoNormal\">Trong m\u1ed9t m\u1ed1i quan h\u1ec7 m\u00e0 \u0111\u1ed1i ph\u01b0\u01a1ng h\u1ec9 c\u00f3 th\u1ec3 nh\u1eadn ra m\u1ed1i lo l\u1eafng c\u1ee7a nhau m\u1ed9t c\u00e1ch t\u00ecnh c\u1edd th\u00ec th\u1eadt l\u00e0 \u0111\u00e1ng th\u1ea5t v\u1ecdng. \u1ede \u0111\u00f3 kh\u00f4ng c\u00f3 s\u1ef1 tin t\u01b0\u1edfng l\u1eabn nhau. -_-<br></p>", "created_on": "2020-05-25T14:42:12.680Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 25, "fields": {"title": null, "slug": "2020-05-26-0147343796460000", "update_on": "2020-05-26T01:52:54.267Z", "content": "<p>Ng\u1ed3i tr\u01b0\u1edbc m\u00e1y t\u00ednh l\u00e0 l\u01b0ng ph\u1ea3i th\u1eb3ng. Kh\u00f4ng th\u1eb3ng \u0111\u01b0\u1ee3c t\u1ee9c l\u00e0 t\u00e2m c\u00f3 v\u1ea5n \u0111\u1ec1. T\u00e2m m\u00e0 c\u00f3 v\u1ea5n \u0111\u1ec1 th\u00ec kh\u00f4ng l\u00e0m \u0111\u01b0\u1ee3c g\u00ec c\u1ea3. \u0110i ch\u1ec9nh s\u1eeda c\u00e1i t\u00e2m tr\u01b0\u1edbc r\u1ed3i mu\u1ed1n l\u00e0m g\u00ec c\u0169ng \u0111\u01b0\u1ee3c.\ud83d\udcaa<br></p>", "created_on": "2020-05-26T01:47:34.713Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 26, "fields": {"title": null, "slug": "2020-05-26-0648361618840000", "update_on": "2020-05-26T06:48:36.332Z", "content": "<p>Hoa r\u01a1i h\u1eefu \u00fd, n\u01b0\u1edbc ch\u1ea3y v\u00f4 t\u00ecnh</p><p>Hoa v\u00f4 t\u00ecnh \u0111\u1ed1i \u0111i\u1ec7n ng\u01b0\u1eddi h\u1eefu \u00fd -- \u0110\u00f4ng t\u00e0 tr\u00edch l\u1eddi d\u01b0\u01a1ng tu</p>", "created_on": "2020-05-26T06:48:36.332Z", "status": 1, "tags": [2]}}, {"model": "post.post", "pk": 28, "fields": {"title": "L\u1ed1 l\u0103ng, r\u1ed7ng tu\u1ebfch v\u00e0 gi\u1ea3 t\u1ea1o", "slug": "lo-lang-rong-tuech-va-gia-toa", "update_on": "2020-06-15T03:25:25.910Z", "content": "<p>N\u00f3 s\u1ee3, b\u1edfi v\u00ec \u0111\u00f3 ch\u00ednh l\u00e0 con ng\u01b0\u1eddi n\u00f3, h\u01a1i c\u1ea3m gi\u00e1c v\u00f4 d\u1ee5ng. Nh\u01b0ng kh\u00f4ng n\u00ean lo l\u1eafng, b\u1edfi v\u00ec n\u00f3 r\u1ed7ng tu\u1ebfch n\u00ean n\u00f3 m\u1edbi c\u00f3 th\u1ec3 h\u1ecdc \u0111\u01b0\u1ee3c nh\u1eefng \u0111i\u1ec1u t\u1ed1t \u0111\u1eb9p. Ch\u1ee9 kh\u00f4ng nh\u01b0 v\u00e0i ng\u01b0\u1eddi, kh\u00f4ng c\u00f3 \u0111i\u1ec1u g\u00ec th\u1ef1c s\u1ef1 \u00fd ngh\u0129a hay s\u00e2u s\u1eafc trong ng\u01b0\u1eddi c\u1ea3. Gi\u1edd v\u1ea5n \u0111\u1ec1 c\u1ee7a n\u00f3 l\u00e0 s\u1ef1 c\u1ed1 g\u1eafng nh\u01b0 th\u1ebf n\u00e0o?<br></p>", "created_on": "2020-05-28T01:54:48.787Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 29, "fields": {"title": null, "slug": "2020-05-31-0338170009330000", "update_on": "2020-05-31T03:38:17.037Z", "content": "<p>\u0110\u1eddi ch\u1ec9 c\u00f3 m\u1ed9t l\u1ea7n. V\u1eady n\u00f3 s\u1ebd ph\u1ea3i l\u00e0m g\u00ec?</p>", "created_on": "2020-05-31T03:38:17.037Z", "status": 1, "tags": []}}, {"model": "post.post", "pk": 30, "fields": {"title": null, "slug": "2020-06-04-1305251154170000", "update_on": "2020-06-09T11:10:36.808Z", "content": "G\u00f3c m\u00e1y, \u00e1nh s\u00e1ng v\u00e0 l\u1ea5y n\u00e9t", "created_on": "2020-06-04T13:05:25.426Z", "status": 1, "tags": []}}, {"model": "post.comment", "pk": 1, "fields": {"post": 1, "name": "Anh", "email": "canhazn@gmail.com", "body": "test b\u00ecnh lu\u1eadn", "created_on": "2020-05-14T09:40:30.737Z", "active": true}}, {"model": "post.image", "pk": 5, "fields": {"post": 30, "created_on": "2020-06-15T02:58:48.011Z", "img_file": "2020-06-04-1305251154170000/774A76EE-334B-401A-B44B-861E80539F75.jpeg"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add user", "content_type": 4, "codename": "add_user"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change user", "content_type": 4, "codename": "change_user"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete user", "content_type": 4, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view user", "content_type": 4, "codename": "view_user"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add content type", "content_type": 5, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change content type", "content_type": 5, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete content type", "content_type": 5, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view content type", "content_type": 5, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add session", "content_type": 6, "codename": "add_session"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change session", "content_type": 6, "codename": "change_session"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete session", "content_type": 6, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view session", "content_type": 6, "codename": "view_session"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add tag", "content_type": 7, "codename": "add_tag"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change tag", "content_type": 7, "codename": "change_tag"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete tag", "content_type": 7, "codename": "delete_tag"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view tag", "content_type": 7, "codename": "view_tag"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add post", "content_type": 8, "codename": "add_post"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change post", "content_type": 8, "codename": "change_post"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete post", "content_type": 8, "codename": "delete_post"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view post", "content_type": 8, "codename": "view_post"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add image", "content_type": 9, "codename": "add_image"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change image", "content_type": 9, "codename": "change_image"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete image", "content_type": 9, "codename": "delete_image"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view image", "content_type": 9, "codename": "view_image"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add comment", "content_type": 10, "codename": "add_comment"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change comment", "content_type": 10, "codename": "change_comment"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete comment", "content_type": 10, "codename": "delete_comment"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view comment", "content_type": 10, "codename": "view_comment"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add attachment", "content_type": 11, "codename": "add_attachment"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change attachment", "content_type": 11, "codename": "change_attachment"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete attachment", "content_type": 11, "codename": "delete_attachment"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view attachment", "content_type": 11, "codename": "view_attachment"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$180000$9zcvRjL4eBov$KyK09JwTWSPrB7bA2jQvKEvL11rMmcoHjRBA88VLlEk=", "last_login": "2020-06-15T03:23:50.907Z", "is_superuser": true, "username": "admin", "first_name": "", "last_name": "", "email": "canhazn@gmail.com", "is_staff": true, "is_active": true, "date_joined": "2020-06-12T08:09:39.735Z", "groups": [], "user_permissions": []}}, {"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2020-06-15T02:52:21.585Z", "user": 1, "content_type": 9, "object_id": "1", "object_repr": "/media/2020-06-04-1305251154170000/CDB2CEFF-4FDA-4F84-B364-7BCF28DB2B0C.jpeg", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2020-06-15T02:56:50.759Z", "user": 1, "content_type": 9, "object_id": "2", "object_repr": "/media/2020-06-04-1305251154170000/C7ECA3C0-DA67-4597-8D14-05FA07388C1D.jpeg", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2020-06-15T02:58:05.870Z", "user": 1, "content_type": 9, "object_id": "2", "object_repr": "https://blogchancuu-bucket.s3.amazonaws.com/2020-06-04-1305251154170000/C7ECA3C0-DA67-4597-8D14-05FA07388C1D.jpeg?AWSAccessKeyId=AKIAYN6DG2LSW4JRYFF2&Signature=rKUEHXiuRGj%2FA%2Fgce0J6zd28OCE%3D&Expir", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2020-06-15T02:58:55.187Z", "user": 1, "content_type": 9, "object_id": "5", "object_repr": "https://blogchancuu-bucket.s3.amazonaws.com/2020-06-04-1305251154170000/774A76EE-334B-401A-B44B-861E80539F75.jpeg?AWSAccessKeyId=AKIAYN6DG2LSW4JRYFF2&Signature=q0LjMyWyVDTiJ1RnXUmv0lKvPCs%3D&Expires=1", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2020-06-15T03:25:26.228Z", "user": 1, "content_type": 8, "object_id": "28", "object_repr": "lo-lang-rong-tuech-va-gia-toa", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"}}]
+[
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "post",
+            "model": "tag"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "post",
+            "model": "post"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "post",
+            "model": "image"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "post",
+            "model": "comment"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "django_summernote",
+            "model": "attachment"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "6v7wql5hf3lp0enwl5qbqjy5zks6wd7t",
+        "fields": {
+            "session_data": "OTc1OGJhYjlkZjE4OTk0MDVlYzBhYTg3YTY2YmMzYWQxNmI3YzYzODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMTE4MGM2YTc3NmMxZjI4MTA0ZjE0ZWI2NmY2YWJjYTk3MjUwNzMxIn0=",
+            "expire_date": "2020-06-29T02:53:40.441Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "f2997azx0fr1aenibmeciuic0nxdmxvr",
+        "fields": {
+            "session_data": "OTc1OGJhYjlkZjE4OTk0MDVlYzBhYTg3YTY2YmMzYWQxNmI3YzYzODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMTE4MGM2YTc3NmMxZjI4MTA0ZjE0ZWI2NmY2YWJjYTk3MjUwNzMxIn0=",
+            "expire_date": "2020-06-26T08:09:45.167Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "vfpar4i6lesjytx5ees0fw6g0ym99tsu",
+        "fields": {
+            "session_data": "OTc1OGJhYjlkZjE4OTk0MDVlYzBhYTg3YTY2YmMzYWQxNmI3YzYzODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlMTE4MGM2YTc3NmMxZjI4MTA0ZjE0ZWI2NmY2YWJjYTk3MjUwNzMxIn0=",
+            "expire_date": "2020-06-29T03:23:51.034Z"
+        }
+    },
+    {
+        "model": "post.tag",
+        "pk": 1,
+        "fields": {
+            "title": "Ch\u00e2m ng\u00f4n",
+            "slug": "cham-ngon",
+            "created_on": "2020-05-19T08:55:30.815Z"
+        }
+    },
+    {
+        "model": "post.tag",
+        "pk": 2,
+        "fields": {
+            "title": "Thi vi\u1ec7n",
+            "slug": "thi-vien",
+            "created_on": "2020-05-26T06:48:29.972Z"
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "s\u1eb5n s\u00e0ng online",
+            "slug": "san-sang-online",
+            "update_on": "2020-05-13T11:09:05.893Z",
+            "content": "<p>Sau c\u1ea3 th\u00e1ng tr\u1eddi th\u00ec c\u0169ng \u0111\u00e3 s\u1eb5n s\u00e0ng cho blog l\u00ean s\u00f3ng.&nbsp;</p><p>Database PostgreSql: AWS&nbsp;</p><p>Static Files: W3 service</p><p>Host: Heroku</p>",
+            "created_on": "2020-05-13T00:00:00Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 2,
+        "fields": {
+            "title": "N\u1eefa n\u00e0o",
+            "slug": "nua-nao",
+            "update_on": "2020-05-14T14:59:02.466Z",
+            "content": "<p>M\u1ed7i ng\u00e0y m\u1ed9t t\u1ed1t h\u01a1n nh\u00e9. Th\u1ebf l\u00e0 c\u0169ng xong c\u00e1i blog n\u00e0y r\u1ed3i, gi\u1edd th\u1ec9nh tho\u1ea3ng v\u00f4 update l\u00e0m cho n\u00f3 t\u1ed1t h\u01a1n th\u00f4i. V\u1eabn c\u1ea7n th\u00eam t\u00ednh n\u0103ng slug by&nbsp;unique id, tags n\u1eefa. C\u1ed1 l\u00ean n\u00e0o.</p>\r\n\r\n<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/653777399&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true\"></iframe>",
+            "created_on": "2020-05-14T00:00:00Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 16,
+        "fields": {
+            "title": "done slug",
+            "slug": "done-slug",
+            "update_on": "2020-05-15T03:25:18.630Z",
+            "content": "<p>Slug done sau c\u1ea3 bu\u1ed5i s\u00e1ng nghi\u00ean c\u1ee9u:&nbsp;</p><p>Ban \u0111\u1ea7u d\u00f9ng AutoSlug th\u00ec kh\u00f4ng \u0111\u01b0\u1ee3c? Sau \u0111\u00f3 th\u1eed unique_slugify v\u00e0 c\u0169ng kh\u00f4ng \u0111\u01b0\u1ee3c. \u0110au, gi\u1edd l\u1eadt l\u1ea1i t\u00ecm l\u00ed do, th\u00ec ra l\u00e0 created_on v\u1eabn l\u00e0 null cho \u0111\u1ebfn khi \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o database. C\u00e1ch gi\u1ea3i quy\u1ebft b\u00e2y gi\u1edd l\u00e0 g\u00e1n gi\u00e1 tr\u1ecb cho n\u00f3 tr\u01b0\u1edbc khi \u0111\u01b0\u1ee3c \u0111\u01b0a xu\u1ed1ng database. V\u1eady th\u00ec d\u00f9ng timestamp.now() - m\u1ed9t util c\u1ee7a django l\u00e0 ok.</p>",
+            "created_on": "2020-05-15T03:25:18.630Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 18,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-15-0916176533780000",
+            "update_on": "2020-05-16T02:26:40.992Z",
+            "content": "C\u1ed1 l\u00ean b\u1ea1n \u01a1i!&nbsp;\u2764\ufe0f",
+            "created_on": "2020-05-15T09:16:17.870Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 19,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-15-1516080875850000",
+            "update_on": "2020-05-15T15:16:08.397Z",
+            "content": "<p>Y\u00eau b\u1ea3n th\u00e2n m\u00ecnh tr\u01b0\u1edbc \u0111i nh\u00e9! Ph\u1ea3i ch\u0103m s\u00f3c t\u1ed1t cho n\u00f3\ud83e\udd70, gi\u1edd th\u00ec \u0111i ng\u1ee7 s\u1edbm \u0111i.</p>",
+            "created_on": "2020-05-15T15:16:08.397Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 20,
+        "fields": {
+            "title": "H\u1ecdc ng\u1ee7",
+            "slug": "hoc-ngu",
+            "update_on": "2020-05-15T23:45:23.006Z",
+            "content": "<p>Ha ha ha, c\u01b0\u1eddi l\u1edbn. T\u1eebng n\u00e0y tu\u1ed5i r\u1ed3i m\u00e0 gi\u1edd n\u00e0y c\u00f2n ph\u1ea3i h\u1ecdc c\u00e1ch ng\u1ee7.&nbsp;</p><p>B\u1eaft \u0111\u1ea7u l\u00ean gi\u01b0\u1eddng t\u1eeb 10h, n\u1eb1m tr\u1eb1n tr\u1ecdc l\u0103n b\u00ean n\u00e0y, l\u1eadt b\u00ean kia. L\u1eadt ch\u0103n ra th\u00ec l\u1ea1nh, \u0111\u1eafp ch\u0103n v\u00e0o th\u00ec n\u00f3ng. Quay qu\u1ea1t l\u00ean \u0111\u1ea7u th\u00ec s\u1ee3 ho, quay qu\u1ea1t xu\u1ed1ng ch\u00e2n th\u00ec th\u1ea5y m\u1ec7t m\u1ec7t. M\u1edf c\u1ee7a s\u1ed5 th\u00ec mu\u1ed7n, \u0111\u00f3ng c\u1eeda s\u1ed5 th\u00ec b\u00ed. \u00d4i tr\u1eddi t\u00f4i ch\u1ebft m\u1ea5t, \u0111\u1ee7 th\u1ee9 chuy\u1ec7n kh\u00f3 ch\u1ecbu.</p><p>R\u1ed3i b\u1ed7ng ngh\u0129 l\u1ea1i. \u00c0, th\u00ec ra l\u00e0 do t\u00e2m b\u1ea5t \u0111\u1ecbnh. L\u00f2ng kh\u00f4ng y\u00ean n\u00ean sinh kh\u00f3 \u1edf, ch\u1ee9 c\u00f3 g\u00ec to t\u00e1t \u0111\u00e2u. Kh\u00f4ng ph\u1ea3i n\u00f3 kh\u00f3 ng\u1ee7 m\u00e0 l\u00e0 l\u00f2ng kh\u00f4ng y\u00ean th\u00f4i. T\u00e2m tr\u1ea1ng b\u00ecnh \u1ed5n l\u1ea1i, kh\u00f4ng s\u00e2n si, kh\u00f4ng \u0111\u1ed1 k\u1ecb, kh\u00f4ng ph\u00e0n n\u00e0n, t\u1ecf l\u00f2ng bi\u1ebft \u01a1n m\u1ed9t ch\u00fat. \u0110\u1ec3 t\u00e2m tr\u1ea1ng ng\u1ee7 tr\u01b0\u1edbc r\u1ed3i t\u1edbi c\u00e1i th\u00e2n x\u00e1c n\u00e0y ng\u1ee7 sau.</p>",
+            "created_on": "2020-05-15T23:45:23.006Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 21,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-19-0215521973520000",
+            "update_on": "2020-05-19T08:55:40.785Z",
+            "content": "<p>Ng\u01b0\u1eddi c\u00f4ng th\u00e0nh th\u1eafng \u0111\u1ecbch ch\u1eafc ch\u1eafn l\u00e0 ng\u01b0\u1eddi t\u00e0i gi\u1ecfi, nh\u01b0ng ng\u01b0\u1eddi chi\u1ebfn th\u1eafng b\u1ea3n th\u00e2n m\u00ecnh c\u00f2n gi\u1ecfi h\u01a1n!</p>",
+            "created_on": "2020-05-19T02:15:52.445Z",
+            "status": 1,
+            "tags": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 22,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-19-1121514541850000",
+            "update_on": "2020-05-19T11:22:19.951Z",
+            "content": "<p>T\u1ea1m g\u1ecdi l\u00e0 th\u00e0nh c\u00f4ng cho m\u1ed9t ng\u00e0y l\u00e0m vi\u1ec7c.</p><p>B\u1eaft \u0111\u1ea7u l\u00fac 9h s\u00e1ng, k\u1ebft th\u00fac l\u00fac 5h40: tags models, many-to-many relationshiops, query parents models, appy css for tag list, tag_detail.html, resolve nested a html tag by jquery</p><p>6h - 6h20: fix bug. Many to many required blank=true</p>",
+            "created_on": "2020-05-19T11:21:51.700Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 23,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-25-0311387471310000",
+            "update_on": "2020-05-25T03:11:38.915Z",
+            "content": "<p>B\u00ed quy\u1ebft c\u1ee7a h\u1ea1nh ph\u00fac l\u00e0 b\u00e2n r\u1ed9n&nbsp;<span style=\"color: rgb(51, 51, 51); font-family: &quot;Segoe UI Emoji&quot;\">\ud83e\udd70</span></p>",
+            "created_on": "2020-05-25T03:11:38.915Z",
+            "status": 1,
+            "tags": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 24,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-26-0151057250160000",
+            "update_on": "2020-05-26T01:51:05.887Z",
+            "content": "<p class=\"MsoNormal\">Trong m\u1ed9t m\u1ed1i quan h\u1ec7 m\u00e0 \u0111\u1ed1i ph\u01b0\u01a1ng h\u1ec9 c\u00f3 th\u1ec3 nh\u1eadn ra m\u1ed1i lo l\u1eafng c\u1ee7a nhau m\u1ed9t c\u00e1ch t\u00ecnh c\u1edd th\u00ec th\u1eadt l\u00e0 \u0111\u00e1ng th\u1ea5t v\u1ecdng. \u1ede \u0111\u00f3 kh\u00f4ng c\u00f3 s\u1ef1 tin t\u01b0\u1edfng l\u1eabn nhau. -_-<br></p>",
+            "created_on": "2020-05-25T14:42:12.680Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 25,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-26-0147343796460000",
+            "update_on": "2020-05-26T01:52:54.267Z",
+            "content": "<p>Ng\u1ed3i tr\u01b0\u1edbc m\u00e1y t\u00ednh l\u00e0 l\u01b0ng ph\u1ea3i th\u1eb3ng. Kh\u00f4ng th\u1eb3ng \u0111\u01b0\u1ee3c t\u1ee9c l\u00e0 t\u00e2m c\u00f3 v\u1ea5n \u0111\u1ec1. T\u00e2m m\u00e0 c\u00f3 v\u1ea5n \u0111\u1ec1 th\u00ec kh\u00f4ng l\u00e0m \u0111\u01b0\u1ee3c g\u00ec c\u1ea3. \u0110i ch\u1ec9nh s\u1eeda c\u00e1i t\u00e2m tr\u01b0\u1edbc r\u1ed3i mu\u1ed1n l\u00e0m g\u00ec c\u0169ng \u0111\u01b0\u1ee3c.\ud83d\udcaa<br></p>",
+            "created_on": "2020-05-26T01:47:34.713Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 26,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-26-0648361618840000",
+            "update_on": "2020-05-26T06:48:36.332Z",
+            "content": "<p>Hoa r\u01a1i h\u1eefu \u00fd, n\u01b0\u1edbc ch\u1ea3y v\u00f4 t\u00ecnh</p><p>Hoa v\u00f4 t\u00ecnh \u0111\u1ed1i \u0111i\u1ec7n ng\u01b0\u1eddi h\u1eefu \u00fd -- \u0110\u00f4ng t\u00e0 tr\u00edch l\u1eddi d\u01b0\u01a1ng tu</p>",
+            "created_on": "2020-05-26T06:48:36.332Z",
+            "status": 1,
+            "tags": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 28,
+        "fields": {
+            "title": "L\u1ed1 l\u0103ng, r\u1ed7ng tu\u1ebfch v\u00e0 gi\u1ea3 t\u1ea1o",
+            "slug": "lo-lang-rong-tuech-va-gia-toa",
+            "update_on": "2020-06-15T03:25:25.910Z",
+            "content": "<p>N\u00f3 s\u1ee3, b\u1edfi v\u00ec \u0111\u00f3 ch\u00ednh l\u00e0 con ng\u01b0\u1eddi n\u00f3, h\u01a1i c\u1ea3m gi\u00e1c v\u00f4 d\u1ee5ng. Nh\u01b0ng kh\u00f4ng n\u00ean lo l\u1eafng, b\u1edfi v\u00ec n\u00f3 r\u1ed7ng tu\u1ebfch n\u00ean n\u00f3 m\u1edbi c\u00f3 th\u1ec3 h\u1ecdc \u0111\u01b0\u1ee3c nh\u1eefng \u0111i\u1ec1u t\u1ed1t \u0111\u1eb9p. Ch\u1ee9 kh\u00f4ng nh\u01b0 v\u00e0i ng\u01b0\u1eddi, kh\u00f4ng c\u00f3 \u0111i\u1ec1u g\u00ec th\u1ef1c s\u1ef1 \u00fd ngh\u0129a hay s\u00e2u s\u1eafc trong ng\u01b0\u1eddi c\u1ea3. Gi\u1edd v\u1ea5n \u0111\u1ec1 c\u1ee7a n\u00f3 l\u00e0 s\u1ef1 c\u1ed1 g\u1eafng nh\u01b0 th\u1ebf n\u00e0o?<br></p>",
+            "created_on": "2020-05-28T01:54:48.787Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 29,
+        "fields": {
+            "title": null,
+            "slug": "2020-05-31-0338170009330000",
+            "update_on": "2020-05-31T03:38:17.037Z",
+            "content": "<p>\u0110\u1eddi ch\u1ec9 c\u00f3 m\u1ed9t l\u1ea7n. V\u1eady n\u00f3 s\u1ebd ph\u1ea3i l\u00e0m g\u00ec?</p>",
+            "created_on": "2020-05-31T03:38:17.037Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 30,
+        "fields": {
+            "title": null,
+            "slug": "2020-06-04-1305251154170000",
+            "update_on": "2020-06-09T11:10:36.808Z",
+            "content": "G\u00f3c m\u00e1y, \u00e1nh s\u00e1ng v\u00e0 l\u1ea5y n\u00e9t",
+            "created_on": "2020-06-04T13:05:25.426Z",
+            "status": 1,
+            "tags": []
+        }
+    },
+    {
+        "model": "post.comment",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "name": "Anh",
+            "email": "canhazn@gmail.com",
+            "body": "test b\u00ecnh lu\u1eadn",
+            "created_on": "2020-05-14T09:40:30.737Z",
+            "active": true
+        }
+    },
+    {
+        "model": "post.image",
+        "pk": 5,
+        "fields": {
+            "post": 30,
+            "created_on": "2020-06-15T02:58:48.011Z",
+            "img_file": "2020-06-04-1305251154170000/774A76EE-334B-401A-B44B-861E80539F75.jpeg"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add tag",
+            "content_type": 7,
+            "codename": "add_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change tag",
+            "content_type": 7,
+            "codename": "change_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete tag",
+            "content_type": 7,
+            "codename": "delete_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view tag",
+            "content_type": 7,
+            "codename": "view_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add post",
+            "content_type": 8,
+            "codename": "add_post"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change post",
+            "content_type": 8,
+            "codename": "change_post"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete post",
+            "content_type": 8,
+            "codename": "delete_post"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view post",
+            "content_type": 8,
+            "codename": "view_post"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add image",
+            "content_type": 9,
+            "codename": "add_image"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change image",
+            "content_type": 9,
+            "codename": "change_image"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete image",
+            "content_type": 9,
+            "codename": "delete_image"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view image",
+            "content_type": 9,
+            "codename": "view_image"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add comment",
+            "content_type": 10,
+            "codename": "add_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change comment",
+            "content_type": 10,
+            "codename": "change_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete comment",
+            "content_type": 10,
+            "codename": "delete_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view comment",
+            "content_type": 10,
+            "codename": "view_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add attachment",
+            "content_type": 11,
+            "codename": "add_attachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change attachment",
+            "content_type": 11,
+            "codename": "change_attachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete attachment",
+            "content_type": 11,
+            "codename": "delete_attachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view attachment",
+            "content_type": 11,
+            "codename": "view_attachment"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$180000$9zcvRjL4eBov$KyK09JwTWSPrB7bA2jQvKEvL11rMmcoHjRBA88VLlEk=",
+            "last_login": "2020-06-15T03:23:50.907Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "canhazn@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-06-12T08:09:39.735Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2020-06-15T02:52:21.585Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "/media/2020-06-04-1305251154170000/CDB2CEFF-4FDA-4F84-B364-7BCF28DB2B0C.jpeg",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2020-06-15T02:56:50.759Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "/media/2020-06-04-1305251154170000/C7ECA3C0-DA67-4597-8D14-05FA07388C1D.jpeg",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2020-06-15T02:58:05.870Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "https://blogchancuu-bucket.s3.amazonaws.com/2020-06-04-1305251154170000/C7ECA3C0-DA67-4597-8D14-05FA07388C1D.jpeg?AWSAccessKeyId=AKIAYN6DG2LSW4JRYFF2&Signature=rKUEHXiuRGj%2FA%2Fgce0J6zd28OCE%3D&Expir",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2020-06-15T02:58:55.187Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "https://blogchancuu-bucket.s3.amazonaws.com/2020-06-04-1305251154170000/774A76EE-334B-401A-B44B-861E80539F75.jpeg?AWSAccessKeyId=AKIAYN6DG2LSW4JRYFF2&Signature=q0LjMyWyVDTiJ1RnXUmv0lKvPCs%3D&Expires=1",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2020-06-15T03:25:26.228Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "28",
+            "object_repr": "lo-lang-rong-tuech-va-gia-toa",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Content\"]}}]"
+        }
+    }
+]

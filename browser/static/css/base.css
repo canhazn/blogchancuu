@@ -1,0 +1,47 @@
+:root {
+    --main-bg-color: #202124;
+    --main-text-color: #e8eaed;
+    --main-border-color: #5f6368;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    background-color: #202124;
+    color: var(--main-text-color);
+}
+
+.top-nav {
+    background-color: #1a1a1a;
+}
+
+.input-group-text {
+    background-color: var(--main-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+.form-control {
+    padding-right: 12px;
+    padding-left: 34px;
+    background-color: var(--main-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+.search-input {
+    /* position: absolute; */
+    /* top: 20px; */
+    /* right: 50px; */
+    box-sizing: border-box;    
+    height: 0px;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+  }
+
+.search-input.active {
+    height: 40px;
+    /* top: 100px; */
+  }
+  
+
+  

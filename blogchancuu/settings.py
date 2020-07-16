@@ -38,10 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
-    'post',
     'django_summernote',
-    'rest_framework',    
+    'rest_framework',
     'import_export',
+    'django_filters',
+    'browser',
+    'core',
+    'post',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +63,7 @@ ROOT_URLCONF = 'blogchancuu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'browser/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,6 +85,8 @@ WSGI_APPLICATION = 'blogchancuu.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
+            # 'ENGINE': 'django.db.backends.sqlite3',
+            # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'dev',
             'USER': 'postgres',
@@ -101,7 +106,6 @@ else:
             'PORT': '5432'
         }
     }
-
 
 
 # Password validation
@@ -140,9 +144,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/browser/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'browser/static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'browser/staticfiles')
 
 # Media paths
 # Base url to serve media files
@@ -153,7 +157,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
-#S3 BUCKETS CONFIG
+# S3 BUCKETS CONFIG
 AWS_ACCESS_KEY_ID = 'AKIAYN6DG2LSW4JRYFF2'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'blogchancuu-bucket'
@@ -173,3 +177,9 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 </CORSRule>
 </CORSConfiguration>
 '''
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 8
+}
