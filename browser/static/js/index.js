@@ -8,7 +8,7 @@ var store = new Vuex.Store({
         searchKey: "",
         querys: {
             search: "",
-            tags: "",
+            tags: ""
         }
     },
     getters: {
@@ -61,7 +61,7 @@ var store = new Vuex.Store({
                         nextUrl: res.next
                     });
                 }
-            })
+            });
         },
         loadPost(context) {
             if (!context.state.nextUrl) {
@@ -99,6 +99,16 @@ let magicGrid;
 PostList = Vue.component('post-list', {
     props: ['posts'],
     template: "#post-list-template",
+    mounted: function () {
+        // Load post when scrolled to the the bottom
+        $(window).on("scroll", function () {
+            var scrollHeight = $(document).height();
+            var scrollPosition = $(window).height() + $(window).scrollTop();
+            if ((scrollHeight - scrollPosition) / scrollHeight <= 0.2) {
+                store.dispatch('loadPost');
+            }
+        });
+    },
     updated: function () {
         if ($(".container-post")) {
             magicGrid = new MagicGrid({
@@ -108,8 +118,8 @@ PostList = Vue.component('post-list', {
                 static: true,
                 useMin: true
             });
-
             magicGrid.listen();
+            console.log("Post list updated");
         }
     }
 });
@@ -157,9 +167,7 @@ PostImages = Vue.component('post-images', {
     mounted: function () {
         if (!$(this.$el).find("img")) return;
         $(this.$el).find("img").each(function (index, element) {
-
             $(element).on('load', function () {
-                console.log('new image loaded: ' + this.src);
                 magicGrid.positionItems()
             });
         });
@@ -186,7 +194,6 @@ PostTag = Vue.component('post-tag', {
         handleClick(event) {
             if (event.target.innerText !== this.tag.title) return;
             store.dispatch('filterPost', { "tags": this.tag.id });
-
             $('#myModel').modal('hide');
         }
     }
@@ -202,8 +209,13 @@ var app = new Vue({
     delimiters: ['[[', ']]'],
     el: '#app',
     store,
+    components: {
+        'top-nav': window.httpVueLoader(STATIC_URL + "js/components/TopNav.vue"),
+        'app-world': window.httpVueLoader(STATIC_URL + "js/components/AppWorld.vue")
+    },
     mounted: function () {
         store.dispatch('initPosts');
+        console.log(STATIC_URL)
     },
     computed: {
         posts() {
@@ -220,28 +232,3 @@ var app = new Vue({
         }
     }
 });
-
-
-
-$(window).on("scroll", function () {
-    var scrollHeight = $(document).height();
-    var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight <= 0.2) {
-        store.dispatch('loadPost');
-    }
-});
-
-
-(function () {
-    var timeout = {};
-    var update = function () {
-        clearTimeout(timeout);
-        timeout = setTimeout(function () {
-            var key = $('#search').val();
-            store.dispatch('filterPost', { "search": key });
-        }, 1000);
-    };
-
-    $('input#search').keyup(update);
-    $('input#search').change(update);
-}());
