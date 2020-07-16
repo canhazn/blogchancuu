@@ -4,15 +4,20 @@ from django.shortcuts import get_object_or_404
 from core.models import Post, Tag, Image
 from post.serializers import PostSerializer, TagSerializer, ImageSerializer
 from rest_framework import permissions
+from rest_framework.filters import SearchFilter
+from django_filters.rest_framework import DjangoFilterBackend
 
 
-class PostViewSet(viewsets.ModelViewSet, generics.GenericAPIView):
+
+class PostViewSet(viewsets.ModelViewSet, generics.ListAPIView):
     """
     View set for list, create, update post
     """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filter_fields = ["slug", "title", "tags", "images"]
+    filter_backends = [SearchFilter, DjangoFilterBackend]
+    search_fields = ['title', 'content']
+    filter_fields = ["tags", "images"]
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
