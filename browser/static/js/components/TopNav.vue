@@ -3,7 +3,7 @@
     <nav class="navbar">
       <a
         class="navbar-brand text-white font-italic font-weight-bolder"
-        href="{% url 'home' %}"
+        href=""
       >BLOGCHANCUU</a>
       <ul class="navbar-nav">
         <li class="nav-item" id="search-btn" style="cursor: pointer;">
@@ -50,7 +50,7 @@ module.exports = {
       $("input#search").change(update);
     })();
 
-    
+
   }
 };
 </script>

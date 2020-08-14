@@ -9,16 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-    <!-- Font -->
+    <!-- Font, Icon -->
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
     <!-- Jquery, bootstrapjs -->
@@ -63,12 +63,12 @@
         <!-- <app-world></app-world> -->
         <post-list v-bind:posts="posts" v-show="!initing"></post-list>
         <loading-icon v-bind:loading="loading"></loading-icon>
-    
+
         <div id="myModel" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
             aria-hidden="true">
             <div class="modal-dialog m-auto" role="document">
                 <div class="modal-content">
-                    <div class="modal-header rounded-0 sticky-top w-100">
+                    <div class="modal-header rounded-0 fixed-top bg-primary" style="position: absolute;">
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span class="material-icons">
                                 keyboard_arrow_left
@@ -81,7 +81,7 @@
                                 <post-images v-bind:images="selectedPost.images"></post-images>
                                 <post-title v-bind:title="selectedPost.title"></post-title>
                                 <post-content v-bind:content="selectedPost.content"></post-content>
-    
+
                                 <div class="tags p-3 nav">
                                     <span v-if="selectedPost.tags.length > 0">
                                         <post-tag v-for="tag in selectedPost.tags" v-bind:tag="tag" :key="tag.slug">
