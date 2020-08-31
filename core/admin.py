@@ -4,11 +4,13 @@ from django.utils.html import format_html
 from import_export.admin import ImportExportModelAdmin
 from django_summernote.admin import SummernoteModelAdmin
 
-from core.models import Post
+from core.models import Post, Image, Tag
+
 
 class PostResource(resources.ModelResource):
     class Meta:
         model = Post
+
 
 class PostAdmin(SummernoteModelAdmin, ImportExportModelAdmin):
     summernote_fields = ('content',)
@@ -28,3 +30,24 @@ class PostAdmin(SummernoteModelAdmin, ImportExportModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+
+
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug']
+    prepopulated_fields = {'slug': ('title', )}
+
+
+admin.site.register(Tag, TagAdmin)
+
+
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ['image_tag', 'post']
+    # prepopulated_fields = {'slug': ('title', )}
+
+    def image_tag(self, obj):
+        return format_html('<img style="max-width: 400px" src="{}"/>'.format(obj.img_file.url))
+
+    image_tag.short_description = "Image"
+
+
+admin.site.register(Image, ImageAdmin)

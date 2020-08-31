@@ -53,13 +53,12 @@
     border-color: var(--main-border-color) !important;
 }
 
-/* .modal-dialog {
-    width: 100%;
-    margin: 0;
-} */
-
 .post-detail {
     background-color: var(--main-bg-color);
+}
+
+.tag {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

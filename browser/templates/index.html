@@ -1,18 +1,66 @@
-{% extends "base.html" %}
 {% load static %}
-{% block extrahead %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock extrahead %}
-{% block content %}
-<script src="{% static 'js/MagicGrid/index.js' %}"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.0.11/dotdotdot.js"></script>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-router"></script>
-<script src="https://unpkg.com/vuex"></script>
-<div class="container">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog chan cuu</title>
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <!-- Font, Icon -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- Jquery, bootstrapjs -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+    <script src="https://unpkg.com/vuex"></script>
+
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+    <!-- For posts munipulate library -->
+    <script src="{% static 'js/MagicGrid/index.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.0.11/dotdotdot.js"></script>
+
+
+    <!-- For extend header -->
+    {% block extrahead %}{% endblock extrahead %}
+</head>
+
+<body>
+    <!-- define global variable on to of body -->
+    <script language="javascript">var STATIC_URL = "{% static ''%}";</script>
     <div id="app" v-cloak>
+
+        <top-nav></top-nav>
+        <br>
+        <!-- <app-world></app-world> -->
         <post-list v-bind:posts="posts" v-show="!initing"></post-list>
         <loading-icon v-bind:loading="loading"></loading-icon>
 
@@ -20,7 +68,7 @@
             aria-hidden="true">
             <div class="modal-dialog m-auto" role="document">
                 <div class="modal-content">
-                    <div class="modal-header rounded-0 sticky-top w-100">
+                    <div class="modal-header rounded-0 fixed-top bg-primary" style="position: absolute;">
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span class="material-icons">
                                 keyboard_arrow_left
@@ -48,8 +96,10 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <footer class="py-3 bg-grey">
+        <p class="m-0 text-dark text-center font-italic">Believe in believing</p>
+    </footer>
 
     <template id="post-list-template">
         <div class="container-post">
@@ -73,7 +123,8 @@
     <template id="post-images-template">
         <div class="w-100 d-flex flex-row" v-if="images">
             <div class="flex-grow-1">
-                <img class="w-100 post-images" v-for="image in images" :key="image.img_file" v-bind:src="image.img_file" />
+                <img class="w-100 post-images" v-for="image in images" :key="image.img_file"
+                    v-bind:src="image.img_file" />
             </div>
         </div>
     </template>
@@ -98,7 +149,7 @@
             </div>
         </div>
     </template>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
 
-</div>
-<script src="{% static 'js/index.js' %}"></script>
-{%endblock%}
+</html>
