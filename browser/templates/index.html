@@ -68,14 +68,14 @@
             aria-hidden="true">
             <div class="modal-dialog m-auto" role="document">
                 <div class="modal-content">
-                    <div class="modal-header rounded-0 fixed-top bg-primary" style="position: absolute;">
+                    <div class="modal-header rounded-0">
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                             <span class="material-icons">
                                 keyboard_arrow_left
                             </span>
                         </button>
                     </div>
-                    <div class="modal-body p-0">
+                    <div class="modal-body p-0 ">
                         <template id="post-detail-template">
                             <div class="post-detail" v-if="selectedPost.slug">
                                 <post-images v-bind:images="selectedPost.images"></post-images>
