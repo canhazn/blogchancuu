@@ -44,6 +44,9 @@ var store = new Vuex.Store({
 
             state.nextUrl = nextUrl;
             state.loading = false;
+        },
+        likePost(state, {post}) {
+
         }
     },
     actions: {
@@ -75,6 +78,23 @@ var store = new Vuex.Store({
             context.commit('loading');
             $.ajax({
                 url: context.state.nextUrl,
+                success: function (res) {
+                    console.log("LoadPost nexturl: ", res.next)
+                    store.commit('appendPost', {
+                        posts: res.results,
+                        nextUrl: res.next
+                    });
+                }
+            })
+        },
+        likePost(context) {           
+            if (context.state.loading && context.state.posts.length) {
+                console.log("STOP  it's loading")
+                return;
+            }
+            
+            $.ajax({
+                url: `/api/like-post/${context.post.slug}`,
                 success: function (res) {
                     console.log("LoadPost nexturl: ", res.next)
                     store.commit('appendPost', {

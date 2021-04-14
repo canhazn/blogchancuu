@@ -19,6 +19,7 @@ class Post(models.Model):
     content = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, blank=True)
+    like = models.IntegerField(default=0)
 
     class Meta:
         ordering = ['-created_on']

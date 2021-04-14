@@ -34,3 +34,12 @@ class ImageViewSet(viewsets.ModelViewSet):
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+def like_post(request, pk):
+    post = get_object_or_404(Post, id=pk)
+    post.like = post.like + 1
+
+    post.save()
+
+    return Response({"result": notify.data})

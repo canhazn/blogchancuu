@@ -87,18 +87,18 @@ WSGI_APPLICATION = 'blogchancuu.wsgi.application'
 
 if DEBUG:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'd5ppbhe7usi93d',
-            'USER': 'kjusgihdqiltko',
-            'PASSWORD': '0f96e3368b38c96b2ba219af62b6c0433d7d009dc967f11e94787374a1871030',
-            'HOST': 'ec2-52-201-55-4.compute-1.amazonaws.com',
-            'PORT': '5432'
-        }
         # 'default': {
-        #     'ENGINE': 'django.db.backends.sqlite3',
-        #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #     'ENGINE': 'django.db.backends.postgresql',
+        #     'NAME': 'd5ppbhe7usi93d',
+        #     'USER': 'kjusgihdqiltko',
+        #     'PASSWORD': '0f96e3368b38c96b2ba219af62b6c0433d7d009dc967f11e94787374a1871030',
+        #     'HOST': 'ec2-52-201-55-4.compute-1.amazonaws.com',
+        #     'PORT': '5432'
         # }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
 else:
     DATABASES = {

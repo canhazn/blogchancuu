@@ -14,3 +14,7 @@ app_name = 'post'
 urlpatterns = [
     path('', include(router.urls))
 ]
+
+urlpatterns += [
+    path('like-post/<slug:slug>', views.like_post), 
+]
